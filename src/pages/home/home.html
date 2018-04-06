@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar color="facebook">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Pizzaria</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs>
+  <ion-tab [root]="destaqueRoot" tabTitle="Destaque" ></ion-tab>
+  <ion-tab [root]="categoriasRoot" tabTitle="Categorias"></ion-tab>
+</ion-tabs>
