@@ -18,7 +18,7 @@ export class LoginPage {
 
   }
 
-  signInWithFacebook() {
+  /*signInWithFacebook() {
     this.authService.signInWithFacebook()
       .then(() => {
         this.navCtrl.setRoot(HomePage);
@@ -27,7 +27,7 @@ export class LoginPage {
         this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
           .present();
       });
-  }
+  }*/
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');

@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SingupPage } from './../pages/singup/singup';
 import { LoginPage } from './../pages/login/login';
-
+import { BebidasPage } from './../pages/bebidas/bebidas';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -34,13 +34,14 @@ const firebaseConfig = {
     HomePage,
     ListPage,
     LoginPage,
-    SingupPage
+    SingupPage,
+    BebidasPage
 
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
-      tabsPlacement: 'bottom',
+      tabsPlacement: 'top',
       platforms: {
         android: {
           tabsPlacement: 'top'
@@ -60,7 +61,8 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    BebidasPage
   ],
   providers: [
     StatusBar,

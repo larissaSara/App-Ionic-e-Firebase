@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {BebidasPage} from '../bebidas/bebidas';
 
-/**
- * Generated class for the DestaquePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,8 +9,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'destaque.html',
 })
 export class DestaquePage {
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  abrirBebidas(){
+    
+    this.navCtrl.push(BebidasPage);
+    
   }
 
   ionViewDidLoad() {
