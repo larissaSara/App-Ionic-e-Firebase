@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 323:
+/***/ 450:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DestaquePageModule", function() { return DestaquePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__destaque__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(454);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DestaquePageModule = (function () {
-    function DestaquePageModule() {
+var ProfilePageModule = (function () {
+    function ProfilePageModule() {
     }
-    DestaquePageModule = __decorate([
+    ProfilePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__destaque__["a" /* DestaquePage */],
+                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__destaque__["a" /* DestaquePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
             ],
         })
-    ], DestaquePageModule);
-    return DestaquePageModule;
+    ], ProfilePageModule);
+    return ProfilePageModule;
 }());
 
-//# sourceMappingURL=destaque.module.js.map
+//# sourceMappingURL=profile.module.js.map
 
 /***/ }),
 
-/***/ 328:
+/***/ 454:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DestaquePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bebidas_bebidas__ = __webpack_require__(210);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(37);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,28 +59,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var DestaquePage = (function () {
-    function DestaquePage(navCtrl, navParams) {
+
+var ProfilePage = (function () {
+    function ProfilePage(afAuth, afDatabase, navCtrl, navParams) {
+        this.afAuth = afAuth;
+        this.afDatabase = afDatabase;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.profile = {};
     }
-    DestaquePage.prototype.abrirBebidas = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__bebidas_bebidas__["a" /* BebidasPage */]);
+    ProfilePage.prototype.createProfile = function () {
+        var _this = this;
+        this.afAuth.authState.take(1).subscribe(function (auth) {
+            _this.afDatabase.object('profile/${auth.uid}').set(_this.profile)
+                .then(function () { return _this.navCtrl.setRoot('HomePage'); });
+        });
     };
-    DestaquePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DestaquePage');
-    };
-    DestaquePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-destaque',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/destaque/destaque.html"*/'<!--\n  Generated template for the DestaquePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>destaque</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="card-background-page">\n  <ion-card>\n    <img src="assets/imgs/destaque/destaque01.png"/>\n  </ion-card>\n  <ion-card>\n    <img src="assets/imgs/destaque/destaque02.png" (click)="abrirBebidas()"/>\n  </ion-card>\n  \n</ion-content>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/destaque/destaque.html"*/,
+    ProfilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
+            selector: 'page-profile',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/profile/profile.html"*/'<ion-header>\n\n  <ion-navbar color="vanp">\n    <ion-title>Perfil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n    <ion-label floating>Nome de Usuário</ion-label>\n    <ion-input [(ngModel)]="profile.username"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Primeiro Nome</ion-label>\n    <ion-input [(ngModel)]="profile.firstName"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Sobrenome</ion-label>\n    <ion-input [(ngModel)]="profile.lastName"></ion-input>\n  </ion-item>\n\n  <button ion-button clear block (click)="createProfile()">Criar Perfil</button>\n</ion-content>'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/profile/profile.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object])
-    ], DestaquePage);
-    return DestaquePage;
-    var _a, _b;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavParams */]) === "function" && _d || Object])
+    ], ProfilePage);
+    return ProfilePage;
+    var _a, _b, _c, _d;
 }());
 
-//# sourceMappingURL=destaque.js.map
+//# sourceMappingURL=profile.js.map
 
 /***/ })
 

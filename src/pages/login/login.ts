@@ -1,8 +1,12 @@
-import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
-import { Component, ViewChild } from '@angular/core';
+import { HomePage } from './../home/home';
+
+import { AngularFireAuth } from 'angularfire2/auth';
+import { User } from './../../models/user';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-import { NgForm } from '@angular/forms';
-import { HomePage } from '../home/home';
+
+
+
 
 
 @IonicPage()
@@ -12,25 +16,25 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-  userData = null;
-  constructor(public navCtrl: NavController,     private toastCtrl: ToastController,
-    private authService: AuthServiceProvider) {
+  user = {} as User;
+  constructor(private afAuth: AngularFireAuth,
+    public navCtrl: NavController, private toastCtrl: ToastController) {
 
   }
 
-  /*signInWithFacebook() {
-    this.authService.signInWithFacebook()
-      .then(() => {
+  async login(user: User) {
+    try {
+      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      if(result){
         this.navCtrl.setRoot(HomePage);
-      })
-      .catch((error) => {
-        this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
-          .present();
-      });
-  }*/
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+      }
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
+  register(){
+    this.navCtrl.push('RegisterPage');
+  }
 }

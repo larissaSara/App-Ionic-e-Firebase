@@ -1,6 +1,5 @@
-
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -8,14 +7,13 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { SingupPage } from './../pages/singup/singup';
 import { LoginPage } from './../pages/login/login';
 import { BebidasPage } from './../pages/bebidas/bebidas';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Facebook } from '@ionic-native/facebook';
-import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+
 import { AngularFireModule } from 'angularfire2'
 
 const firebaseConfig = {
@@ -34,7 +32,6 @@ const firebaseConfig = {
     HomePage,
     ListPage,
     LoginPage,
-    SingupPage,
     BebidasPage
 
   ],
@@ -54,7 +51,10 @@ const firebaseConfig = {
             tabsPlacement: 'top'
           }
       }
-    })
+    }),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -69,7 +69,7 @@ const firebaseConfig = {
     SplashScreen,
     Facebook,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    AuthServiceProvider,
+
 
   ]
 })

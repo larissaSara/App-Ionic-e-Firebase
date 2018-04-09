@@ -19,8 +19,6 @@ export class DestaquePage {
     
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DestaquePage');
-  }
+  
 
 }
