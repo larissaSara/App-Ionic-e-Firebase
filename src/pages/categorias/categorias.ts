@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BebidasPage } from '../bebidas/bebidas';
 
 /**
  * Generated class for the CategoriasPage page.
@@ -22,6 +23,9 @@ export class CategoriasPage {
   ];
 
   itemSelected(item: string) {
+    if(item ='Bebidas'){
+      this.navCtrl.push(BebidasPage);
+    }
     console.log("Selected Item", item);
   }
 

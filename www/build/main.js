@@ -1,11 +1,11 @@
 webpackJsonp([5],{
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(37);
@@ -51,12 +51,12 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="vanp">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>VaptPizzas</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-tabs color="bruxa">\n  <ion-tab [root]="destaqueRoot" tabTitle="Destaque" ></ion-tab>\n  <ion-tab [root]="categoriasRoot" tabTitle="Categorias"></ion-tab>\n\n  <p>Username: {{(profileData | async)?.username}}</p>\n  <p>First Name: {{(profileData | async)?.firstName}}</p>\n  <p>Last Name: {{(profileData | async)?.lastName}}</p>\n</ion-tabs>\n'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="vanp">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>VaptPizzas</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-tabs color="bruxa">\n  <ion-tab [root]="destaqueRoot" tabTitle="Destaque" ></ion-tab>\n  <ion-tab [root]="categoriasRoot" tabTitle="Categorias"></ion-tab>\n  <p>Username: {{(profileData | async)?.username}}</p>\n  <p>First Name: {{(profileData | async)?.firstName}}</p>\n  <p>Last Name: {{(profileData | async)?.lastName}}</p>\n  \n</ion-tabs>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* ToastController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__["a" /* AngularFireDatabase */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */]])
     ], HomePage);
     return HomePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -68,7 +68,7 @@ var HomePage = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(37);
@@ -149,10 +149,10 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar color="vanp">\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <p>Utilize o Facebook para efetuar seu login ou entre com seu email e senha.</p>\n  <button ion-button block icon-left color="facebook" margin-top (click)="signInWithFacebook()">\n    <ion-icon name="logo-facebook"></ion-icon>\n    Entrar com o Facebook\n  </button>\n  \n  <p text-center>Ou</p> \n\n  <ion-item>\n    <ion-label floating>Email de Login</ion-label>\n    <ion-input type="text" [(ngModel)]="user.email"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Senha</ion-label>\n    <ion-input type="password" [(ngModel)]="user.password"></ion-input>\n  </ion-item>\n\n  <button ion-button (click)="login(user)" >Login</button>\n  <button ion-button color="light" (click)="register()" >Cadastra-se</button>\n</ion-content>\n'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar color="vanp">\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <p>Utilize o Facebook para efetuar seu login ou entre com seu email e senha.</p>\n  <button ion-button block icon-left color="facebook" margin-top (click)="signInWithFacebook()">\n    <ion-icon name="logo-facebook"></ion-icon>\n    Entrar com o Facebook\n  </button>\n  \n  <p text-center>Ou</p> \n\n  <ion-item>\n    <ion-label floating>Email de Login</ion-label>\n    <ion-input type="text" [(ngModel)]="user.email"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Senha</ion-label>\n    <ion-input type="password" [(ngModel)]="user.password"></ion-input>\n  </ion-item>\n\n  <button ion-button (click)="login(user)" >Login</button>\n  <button ion-button color="light" (click)="register()" >Cadastra-se</button>\n</ion-content>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* ToastController */]])
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* ToastController */]])
     ], LoginPage);
     return LoginPage;
 }());
@@ -183,23 +183,23 @@ webpackEmptyAsyncContext.id = 148;
 
 var map = {
 	"../pages/categorias/categorias.module": [
-		447,
+		448,
 		3
 	],
 	"../pages/destaque/destaque.module": [
-		448,
+		449,
 		2
 	],
 	"../pages/login/login.module": [
-		449,
+		450,
 		4
 	],
 	"../pages/profile/profile.module": [
-		450,
+		451,
 		1
 	],
 	"../pages/register/register.module": [
-		451,
+		452,
 		0
 	]
 };
@@ -219,7 +219,82 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 282:
+/***/ 240:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BebidasProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+//provider bebidas com firebase
+var BebidasProvider = (function () {
+    function BebidasProvider(db) {
+        this.db = db;
+        this.PATH = "/bebidas";
+    }
+    // retonar objetos no bd
+    BebidasProvider.prototype.getAll = function () {
+        return this.db.list(this.PATH, function (ref) { return ref.orderByChild('nome'); })
+            .snapshotChanges()
+            .map(function (changes) {
+            return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
+        });
+    };
+    // para retornar 1 obejeto
+    BebidasProvider.prototype.get = function (key) {
+        return this.db.object(this.PATH + key);
+    };
+    //cadastrar objeto no bd
+    BebidasProvider.prototype.save = function (bebidas) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (bebidas.key) {
+                _this.db.list(_this.PATH)
+                    .update(bebidas.key, { nome: bebidas.nome, valor: bebidas.valor, imagem: bebidas.url })
+                    .then(function () { return resolve; })
+                    .catch(function (e) { return reject(e); });
+            }
+            else {
+                _this.db.list(_this.PATH)
+                    .push({ nome: bebidas.nome, valor: bebidas.valor, imagem: bebidas.url })
+                    .then(function () { return resolve; });
+            }
+        });
+    };
+    BebidasProvider.prototype.remove = function (key) {
+        return this.db.list(this.PATH).remove(key);
+    };
+    BebidasProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_angularfire2_database__["a" /* AngularFireDatabase */]])
+    ], BebidasProvider);
+    return BebidasProvider;
+}());
+
+//# sourceMappingURL=bebidas.js.map
+
+/***/ }),
+
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -264,9 +339,9 @@ var ListPage = (function () {
     };
     ListPage = ListPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/list/list.html"*/
+            selector: 'page-list',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/list/list.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], ListPage);
     return ListPage;
     var ListPage_1;
@@ -276,13 +351,14 @@ var ListPage = (function () {
 
 /***/ }),
 
-/***/ 283:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BebidasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_bebidas_bebidas__ = __webpack_require__(240);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -294,25 +370,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the BebidasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 var BebidasPage = (function () {
-    function BebidasPage(navCtrl, navParams) {
+    function BebidasPage(navCtrl, navParams, bd, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.bd = bd;
+        this.modalCtrl = modalCtrl;
+        this.bebidas = this.bd.getAll();
     }
-    BebidasPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad BebidasPage');
+    BebidasPage.prototype.bebidasSelecionadas = function (item) {
+        console.log(item);
     };
     BebidasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bebidas',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/bebidas/bebidas.html"*/'<!--\n  Generated template for the BebidasPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-header>\n  <ion-navbar color="vanp">\n    <ion-title>Bebidas</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\nsadsadsad\n</ion-content>\n'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/bebidas/bebidas.html"*/,
+            selector: 'page-bebidas',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/bebidas/bebidas.html"*/'<ion-header padding>\n\n  <ion-navbar>\n    <ion-title>Bebidas</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-list>\n    <ion-item *ngFor="let item of bebidas" (click)="bebidasSelecionadas(item)">\n        {{ item.nome }}\n    </ion-item>\n </ion-list>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/bebidas/bebidas.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_bebidas_bebidas__["a" /* BebidasProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */]])
     ], BebidasPage);
     return BebidasPage;
 }());
@@ -321,14 +395,14 @@ var BebidasPage = (function () {
 
 /***/ }),
 
-/***/ 284:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take__ = __webpack_require__(444);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_take__);
 
 
@@ -338,31 +412,33 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 305:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(433);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_list_list__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_list_list__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_bebidas_bebidas__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_facebook__ = __webpack_require__(442);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_bebidas_bebidas__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_facebook__ = __webpack_require__(443);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_bebidas_bebidas__ = __webpack_require__(240);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -438,6 +514,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__["a" /* SplashScreen */],
                 __WEBPACK_IMPORTED_MODULE_12__ionic_native_facebook__["a" /* Facebook */],
                 { provide: __WEBPACK_IMPORTED_MODULE_3__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_14__providers_bebidas_bebidas__["a" /* BebidasProvider */],
             ]
         })
     ], AppModule);
@@ -448,7 +525,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 433:
+/***/ 434:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -456,10 +533,10 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_login_login__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(283);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -504,13 +581,13 @@ var MyApp = (function () {
         this.nav.setRoot(page.component);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header >\n    <ion-toolbar color="vanp">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header >\n    <ion-toolbar color="vanp">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -519,5 +596,5 @@ var MyApp = (function () {
 
 /***/ })
 
-},[284]);
+},[285]);
 //# sourceMappingURL=main.js.map

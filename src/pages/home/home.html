@@ -5,13 +5,14 @@
     </button>
     <ion-title>VaptPizzas</ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <ion-tabs color="bruxa">
   <ion-tab [root]="destaqueRoot" tabTitle="Destaque" ></ion-tab>
   <ion-tab [root]="categoriasRoot" tabTitle="Categorias"></ion-tab>
-
   <p>Username: {{(profileData | async)?.username}}</p>
   <p>First Name: {{(profileData | async)?.firstName}}</p>
   <p>Last Name: {{(profileData | async)?.lastName}}</p>
+  
 </ion-tabs>

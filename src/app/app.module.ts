@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Facebook } from '@ionic-native/facebook';
 
 import { AngularFireModule } from 'angularfire2'
+import { BebidasProvider } from '../providers/bebidas/bebidas';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCxFC-9bz9QAMYqqlWwp36f6nhRqacSL3Y",
@@ -69,6 +70,7 @@ const firebaseConfig = {
     SplashScreen,
     Facebook,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    BebidasProvider,
 
 
   ]
