@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { User } from './../../models/user';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -21,9 +22,14 @@ export class RegisterPage {
    try {
      const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
      console.log(result);
+     this.abrirHome();
    }
    catch (e) {
      console.error(e);
    }
+ }
+
+ abrirHome(){
+    this.navCtrl.setRoot(HomePage);
  }
 }

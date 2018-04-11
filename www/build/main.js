@@ -36,10 +36,10 @@ var HomePage = (function () {
         this.afAuth.authState.subscribe(function (data) {
             if (data && data.email && data.uid) {
                 _this.toast.create({
-                    message: 'Bem Vindo ao Vapt Pizzas!',
+                    message: "Bem Vindo ao Vapt Pizzas!, " + data.email,
                     duration: 3000
                 }).present();
-                _this.profileData = _this.afDatabase.object('profile/${data.uid}');
+                _this.profileData = _this.afDatabase.object("profile/" + data.uid);
             }
             else {
                 _this.toast.create({
@@ -51,7 +51,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="vanp">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>VaptPizzas</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-tabs color="bruxa">\n  <ion-tab [root]="destaqueRoot" tabTitle="Destaque" ></ion-tab>\n  <ion-tab [root]="categoriasRoot" tabTitle="Categorias"></ion-tab>\n  <p>Username: {{(profileData | async)?.username}}</p>\n  <p>First Name: {{(profileData | async)?.firstName}}</p>\n  <p>Last Name: {{(profileData | async)?.lastName}}</p>\n  \n</ion-tabs>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="vanp">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>VaptPizzas</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-tabs color="bruxa">\n  <ion-tab [root]="destaqueRoot" tabTitle="Destaque" ></ion-tab>\n  <ion-tab [root]="categoriasRoot" tabTitle="Categorias"></ion-tab>\n\n</ion-tabs>\n<!--<ion-content>\n  <p>Username: {{(profileData)?.username}}</p>\n  <p>First Name: {{(profileData | async)?.firstName}}</p>\n  <p>Last Name: {{(profileData | async)?.lastName}}</p>\n  \n</ion-content>-->'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__["a" /* AngularFireDatabase */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */]])
@@ -149,7 +149,7 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar color="vanp">\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <p>Utilize o Facebook para efetuar seu login ou entre com seu email e senha.</p>\n  <button ion-button block icon-left color="facebook" margin-top (click)="signInWithFacebook()">\n    <ion-icon name="logo-facebook"></ion-icon>\n    Entrar com o Facebook\n  </button>\n  \n  <p text-center>Ou</p> \n\n  <ion-item>\n    <ion-label floating>Email de Login</ion-label>\n    <ion-input type="text" [(ngModel)]="user.email"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Senha</ion-label>\n    <ion-input type="password" [(ngModel)]="user.password"></ion-input>\n  </ion-item>\n\n  <button ion-button (click)="login(user)" >Login</button>\n  <button ion-button color="light" (click)="register()" >Cadastra-se</button>\n</ion-content>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar color="vanp">\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <p>Utilize o Facebook para efetuar seu login ou entre com seu email e senha.</p>\n  <button ion-button block icon-left color="facebook" margin-top (click)="signInWithFacebook()">\n    <ion-icon name="logo-facebook"></ion-icon>\n    Entrar com o Facebook\n  </button>\n  \n  <p text-center>Ou</p> \n\n  <ion-item>\n    <ion-label floating>Email de Login</ion-label>\n    <ion-input type="text" [(ngModel)]="user.email"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label floating>Senha</ion-label>\n    <ion-input type="password" [(ngModel)]="user.password"></ion-input>\n  </ion-item>\n\n  <button ion-button (click)="login(user)" >Login</button>\n  <button ion-button color="light" (click)="register()" >Cadastra-se</button>\n</ion-content>\n'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* ToastController */]])
@@ -339,7 +339,7 @@ var ListPage = (function () {
     };
     ListPage = ListPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/list/list.html"*/
+            selector: 'page-list',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/list/list.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], ListPage);
@@ -384,7 +384,7 @@ var BebidasPage = (function () {
     };
     BebidasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-bebidas',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/bebidas/bebidas.html"*/'<ion-header padding>\n\n  <ion-navbar>\n    <ion-title>Bebidas</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-list>\n    <ion-item *ngFor="let item of bebidas" (click)="bebidasSelecionadas(item)">\n        {{ item.nome }}\n    </ion-item>\n </ion-list>\n'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/bebidas/bebidas.html"*/,
+            selector: 'page-bebidas',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/bebidas/bebidas.html"*/'<ion-header padding>\n\n  <ion-navbar>\n    <ion-title>Bebidas</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-list>\n    <ion-item *ngFor="let item of bebidas" (click)="bebidasSelecionadas(item)">\n        {{ item.nome }}\n    </ion-item>\n </ion-list>\n'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/bebidas/bebidas.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_bebidas_bebidas__["a" /* BebidasProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */]])
     ], BebidasPage);
@@ -475,20 +475,7 @@ var AppModule = (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {
-                    tabsPlacement: 'top',
-                    platforms: {
-                        android: {
-                            tabsPlacement: 'top'
-                        },
-                        ios: {
-                            tabsPlacement: 'top'
-                        },
-                        windows: {
-                            tabsPlacement: 'top'
-                        }
-                    }
-                }, {
+                __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/destaque/destaque.module#DestaquePageModule', name: 'DestaquePage', segment: 'destaque', priority: 'low', defaultHistory: [] },
@@ -585,7 +572,7 @@ var MyApp = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header >\n    <ion-toolbar color="vanp">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header >\n    <ion-toolbar color="vanp">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

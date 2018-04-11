@@ -71,13 +71,13 @@ var ProfilePage = (function () {
     ProfilePage.prototype.createProfile = function () {
         var _this = this;
         this.afAuth.authState.take(1).subscribe(function (auth) {
-            _this.afDatabase.object('profile/${auth.uid}').set(_this.profile)
+            _this.afDatabase.object("profile/" + auth.uid).set(_this.profile)
                 .then(function () { return _this.navCtrl.setRoot('HomePage'); });
         });
     };
     ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/profile/profile.html"*/'<ion-header>\n\n  <ion-navbar color="vanp">\n    <ion-title>Perfil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n    <ion-label floating>Nome de Usuário</ion-label>\n    <ion-input [(ngModel)]="profile.username"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Primeiro Nome</ion-label>\n    <ion-input [(ngModel)]="profile.firstName"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Sobrenome</ion-label>\n    <ion-input [(ngModel)]="profile.lastName"></ion-input>\n  </ion-item>\n\n  <button ion-button clear block (click)="createProfile()">Criar Perfil</button>\n</ion-content>'/*ion-inline-end:"/home/larissa/projetos_ionic/App-Ionic-e-Firebase/src/pages/profile/profile.html"*/,
+            selector: 'page-profile',template:/*ion-inline-start:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/profile/profile.html"*/'<ion-header>\n\n  <ion-navbar color="vanp">\n    <ion-title>Perfil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n    <ion-label floating>Nome de Usuário</ion-label>\n    <ion-input [(ngModel)]="profile.username"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Primeiro Nome</ion-label>\n    <ion-input [(ngModel)]="profile.firstName"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Sobrenome</ion-label>\n    <ion-input [(ngModel)]="profile.lastName"></ion-input>\n  </ion-item>\n\n  <button ion-button clear block (click)="createProfile()">Criar Perfil</button>\n</ion-content>'/*ion-inline-end:"/home/everton/public_html/VaptPizzas/App-Ionic-e-Firebase/src/pages/profile/profile.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* NavParams */]])

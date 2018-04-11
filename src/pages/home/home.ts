@@ -24,11 +24,11 @@ export class HomePage {
     this.afAuth.authState.subscribe(data => {
       if(data && data.email && data.uid){
       this.toast.create({
-        message:'Bem Vindo ao Vapt Pizzas!',
-        duration: 3000
+        message:`Bem Vindo ao Vapt Pizzas, ${data.email}`,
+        duration: 4000
       }).present();
 
-      this.profileData = this.afDatabase.object('profile/${data.uid}')
+      this.profileData = this.afDatabase.object(`profile/${data.uid}`)
     }
     else{
       this.toast.create({

@@ -3,6 +3,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Profile } from '../../models/profile';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -20,8 +21,8 @@ export class ProfilePage {
 
   createProfile(){
     this.afAuth.authState.take(1).subscribe(auth => {
-      this.afDatabase.object('profile/${auth.uid}').set(this.profile)
-      .then(() => this.navCtrl.setRoot('HomePage'))
+      this.afDatabase.object(`profile/${auth.uid}`).set(this.profile)
+      .then(() => this.navCtrl.setRoot(HomePage))
     })
   }
 

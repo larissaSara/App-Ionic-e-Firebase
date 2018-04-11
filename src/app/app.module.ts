@@ -38,7 +38,7 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, {
+    IonicModule.forRoot(MyApp, /*{
       tabsPlacement: 'top',
       platforms: {
         android: {
@@ -52,7 +52,7 @@ const firebaseConfig = {
             tabsPlacement: 'top'
           }
       }
-    }),
+    } */),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule
